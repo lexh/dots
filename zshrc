@@ -62,3 +62,7 @@ EOF" > $notes_file
 
     vim $notes_file
 }
+
+# gvm
+source /Users/aherbert/.gvm/scripts/gvm
+

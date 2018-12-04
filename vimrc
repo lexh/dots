@@ -52,10 +52,6 @@ if !exists(":Q")
     command Q q
 endif
 
-" splits to the bottom and to the right
-set splitbelow
-set splitright
-
 " toggle spell check
 nmap <C-f> :set nospell!<CR>
 
