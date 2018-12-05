@@ -66,3 +66,7 @@ EOF" > $notes_file
 # gvm
 source /Users/aherbert/.gvm/scripts/gvm
 
+# onebox
+export ONEBOX_NAME="aherbert"
+
+alias -g :q=exit
