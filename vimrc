@@ -14,6 +14,11 @@ set colorcolumn=120
 set lazyredraw
 set ttyfast
 set nowrap
+set cursorline
+
+" highlight trailing whitespace
+let &listchars="tab:\ \ ,trail:\x2e"
+set list
 
 " split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -23,24 +28,22 @@ nnoremap <C-H> <C-W><C-H>
 
 filetype plugin indent on
 set tabstop=4
-set shiftwidth=4
 set softtabstop=4
+set shiftwidth=4
+set textwidth=119
 set expandtab
+set autoindent
+set fileformat=unix
 
-" PEP8
-au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=119 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix
+au BufNewFile,BufRead *.md
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
 
 " auto reload $MYVIMRC
 augroup myvimrc
-	au!
-	au BufWritePost $MYVIMRC so $MYVIMRC
+    au!
+    au BufWritePost $MYVIMRC so $MYVIMRC
 augroup END
 
 " remap this bullshit
