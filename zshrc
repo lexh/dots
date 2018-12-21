@@ -48,7 +48,7 @@ bindkey -M vicmd 'j' history-substring-search-down
 n() {
     notes_path="$HOME/notes"
     mkdir -p $notes_path
-    
+
     date=$(date +%Y%m%d)  # 20150628
     pretty_date=$(date +"%a %b %d %Y")  # Sun Jun 28 2015
     notes_file="$notes_path/$date.md"

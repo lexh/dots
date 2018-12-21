@@ -1,15 +1,9 @@
 # ${pretty_date}
 
-## Goals
+## TODO
 
 
 ## Notes
-
-
-## TODO today
-
-
-## TODO future
 
 
 ## Retro
