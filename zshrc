@@ -27,6 +27,29 @@ setopt HIST_SAVE_NO_DUPS      # Don't write duplicate entries in the history fil
 setopt HIST_REDUCE_BLANKS     # Remove superfluous blanks before recording entry.
 setopt HIST_VERIFY            # Don't execute immediately upon history expansion.
 setopt HIST_BEEP              # Beep when accessing nonexistent history.
+export HISTORY_IGNORE="(ls|ll|la|pwd|exit|clear|clr|h *|history)"
+
+# history search: filter history by sequence of optional regular expressions
+h() {
+    if [ -z "$*" ]; then
+        history;
+    else
+        res=$(history)
+        for arg in "$@"; do
+            res=$(echo $res | egrep $arg | grep -v " h ")
+        done;
+    echo $res
+    fi;
+}
+
+# pretty branch diff: bdiff <base> <compare>
+bdiff() {
+    git log --graph --pretty=format:'%Cred%h%Creset (%ae) -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative $1..$2
+}
+
+# pid helpers
+p() { ps aux | egrep -v egrep | GREP_COLOR='01;34' egrep --color=always -i "$@"; }
+pid() { p "$@" | sed -E 's/ +/ /g' | cut -d ' ' -f2 }
 
 # pyenv
 eval "$(pyenv init -)"
