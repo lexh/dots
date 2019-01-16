@@ -93,3 +93,6 @@ source /Users/aherbert/.gvm/scripts/gvm
 export ONEBOX_NAME="aherbert"
 
 alias -g :q=exit
+source '/Users/aherbert/src/blessclient/lyftprofile' # bless ssh alias
+source '/Users/aherbert/git/awsaccess/awsaccess2.sh' # awsaccess
+export PS1="\$(ps1_mfa_context)$PS1" # awsaccess
