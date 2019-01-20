@@ -3,6 +3,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 plugins=(
   git
+  kubtctl
 )
 source $ZSH/oh-my-zsh.sh
 
@@ -101,9 +102,5 @@ source ~/.gvm/scripts/gvm
 
 # onebox
 export ONEBOX_NAME="aherbert"
-
-if [ $commands[kubectl] ]; then
-  source <(kubectl completion zsh)
-fi
 
 alias -g :q=exit
