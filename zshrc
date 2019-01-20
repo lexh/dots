@@ -102,4 +102,8 @@ source ~/.gvm/scripts/gvm
 # onebox
 export ONEBOX_NAME="aherbert"
 
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi
+
 alias -g :q=exit
