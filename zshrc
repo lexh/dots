@@ -55,7 +55,17 @@ pid() { p "$@" | sed -E 's/ +/ /g' | cut -d ' ' -f2 }
 eval "$(pyenv init -)"
 
 # bless
-source '/Users/aherbert/src/blessclient/lyftprofile'
+bless_path="~/src/blessclient/lyftprofile"
+if [[ -a $bless_path ]]; then
+    source $bless_path
+fi
+
+# awsaccess
+awsaccess_path="~/src/awsaccess/awsaccess2.sh"
+if [[ -a $awsaccess_path ]]; then
+    source $awsaccess_path
+    export PS1="\$(ps1_mfa_context)$PS1"
+fi
 
 # https://github.com/zsh-users/zsh-autosuggestions
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -87,12 +97,9 @@ EOF" > $notes_file
 }
 
 # gvm
-source /Users/aherbert/.gvm/scripts/gvm
+source ~/.gvm/scripts/gvm
 
 # onebox
 export ONEBOX_NAME="aherbert"
 
 alias -g :q=exit
-source '/Users/aherbert/src/blessclient/lyftprofile' # bless ssh alias
-source '/Users/aherbert/git/awsaccess/awsaccess2.sh' # awsaccess
-export PS1="\$(ps1_mfa_context)$PS1" # awsaccess
