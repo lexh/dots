@@ -58,7 +58,7 @@ endif
 " toggle spell check
 nmap <C-f> :set nospell!<CR>
 
-" system clipboard shortcutrs
+" system clipboard shortcuts
 nmap <C-v> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
 imap <C-v> <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
 nmap <C-c> :.w !pbcopy<CR><CR>
