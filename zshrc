@@ -52,22 +52,6 @@ bdiff() {
 p() { ps aux | egrep -v egrep | GREP_COLOR='01;34' egrep --color=always -i "$@"; }
 pid() { p "$@" | sed -E 's/ +/ /g' | cut -d ' ' -f2 }
 
-# pyenv
-eval "$(pyenv init -)"
-
-# bless
-bless_path="~/src/blessclient/lyftprofile"
-if [[ -a $bless_path ]]; then
-    source $bless_path
-fi
-
-# awsaccess
-awsaccess_path="~/src/awsaccess/awsaccess2.sh"
-if [[ -a $awsaccess_path ]]; then
-    source $awsaccess_path
-    export PS1="\$(ps1_mfa_context)$PS1"
-fi
-
 # https://github.com/zsh-users/zsh-autosuggestions
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
