@@ -81,10 +81,4 @@ EOF" > $notes_file
     vim $notes_file
 }
 
-# gvm
-source ~/.gvm/scripts/gvm
-
-# onebox
-export ONEBOX_NAME="aherbert"
-
 alias -g :q=exit
