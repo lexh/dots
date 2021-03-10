@@ -4,6 +4,8 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   kubectl
+  zsh-autosuggestions
+  history-substring-search
 )
 source $ZSH/oh-my-zsh.sh
 
@@ -52,11 +54,6 @@ bdiff() {
 p() { ps aux | egrep -v egrep | GREP_COLOR='01;34' egrep --color=always -i "$@"; }
 pid() { p "$@" | sed -E 's/ +/ /g' | cut -d ' ' -f2 }
 
-# https://github.com/zsh-users/zsh-autosuggestions
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# https://github.com/zsh-users/zsh-history-substring-search
-source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 bindkey '^[OA' history-substring-search-up
 bindkey '^[OB' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
