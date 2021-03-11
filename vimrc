@@ -56,6 +56,8 @@ if !exists(":Q")
 endif
 
 " toggle spell check
+set spell
+set nospell
 nmap <C-f> :set nospell!<CR>
 
 " system clipboard shortcuts
