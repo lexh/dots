@@ -85,7 +85,3 @@ if [ -f '/Users/lherbert/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/lherbe
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/lherbert/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/lherbert/google-cloud-sdk/completion.zsh.inc'; fi
-
-# keyyyyyyyyyyyyyyyyyyyyy repeat
-defaults write -g InitialKeyRepeat -int 15
-defaults write -g KeyRepeat -int 2
