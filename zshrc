@@ -85,3 +85,5 @@ if [ -f '/Users/lherbert/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/lherbe
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/lherbert/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/lherbert/google-cloud-sdk/completion.zsh.inc'; fi
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
