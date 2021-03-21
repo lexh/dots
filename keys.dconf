@@ -1,0 +1,3 @@
+[/]
+sources=[('xkb', 'us')]
+xkb-options=['ctrl:swap_lalt_lctl', 'ctrl:swap_ralt_rctl', 'caps:ctrl_modifier']
