@@ -1,2 +1,17 @@
 import:
   - ~/git/dots/dracula.yml
+
+font:
+  normal:
+    family: Monaco
+    style: Regular
+
+  bold:
+    family: Monaco
+    style: Bold
+
+  italic:
+    family: Monaco
+    style: Italic
+
+  size: 12.0
