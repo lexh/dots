@@ -87,3 +87,7 @@ if [ -f '/Users/lherbert/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/lherbe
 if [ -f '/Users/lherbert/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/lherbert/google-cloud-sdk/completion.zsh.inc'; fi
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
+
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+export PATH=${PATH}:${HOME}/ltools
