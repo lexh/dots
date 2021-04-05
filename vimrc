@@ -35,11 +35,6 @@ set expandtab
 set autoindent
 set fileformat=unix
 
-au BufNewFile,BufRead *.md
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2 |
-
 " auto reload $MYVIMRC
 augroup myvimrc
     au!
