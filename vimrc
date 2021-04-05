@@ -56,7 +56,13 @@ set nospell
 nmap <C-f> :set nospell!<CR>
 
 " system clipboard shortcuts
-nmap <C-v> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
-imap <C-v> <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
-nmap <C-c> :.w !pbcopy<CR><CR>
-vnoremap <silent> <C-c> :<CR>:let @a=@" \| execute "normal! vgvy" \| let res=system("pbcopy", @") \| let @"=@a<CR>
+if system("uname") == "Linux"
+  " TODO
+elseif system("uname") == "Darwin"
+  nmap <C-v> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+  imap <C-v> <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+  nmap <C-c> :.w !pbcopy<CR><CR>
+  vnoremap <silent> <C-c> :<CR>:let @a=@" \| execute "normal! vgvy" \| let res=system("pbcopy", @") \| let @"=@a<CR>
+endif
+
+
