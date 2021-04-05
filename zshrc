@@ -91,3 +91,12 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 export PATH=${PATH}:${HOME}/ltools
+
+# man pages for built-ins
+unalias run-help
+autoload run-help
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+alias gj="cd ~/git/java"

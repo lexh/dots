@@ -3,15 +3,15 @@ import:
 
 font:
   normal:
-    family: Monaco
+    family: Menlo
     style: Regular
 
   bold:
-    family: Monaco
+    family: Menlo
     style: Bold
 
   italic:
-    family: Monaco
+    family: Menlo
     style: Italic
 
   size: 12.0
