@@ -93,7 +93,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 export PATH=${PATH}:${HOME}/ltools
 
 # man pages for built-ins
-unalias run-help
+unalias run-help 2> /dev/null
 autoload run-help
 
 export LC_ALL=en_US.UTF-8
