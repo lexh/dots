@@ -81,3 +81,5 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 alias gj="cd ~/git/java"
+
+alias cjoin="awk -v d=',' '{s=(NR==1? s: s d) \$0 } END {print s}'"
