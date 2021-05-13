@@ -6,7 +6,10 @@ set splitright
 set mouse=a
 noremap <ScrollWheelUp> 12<C-Y>
 noremap <ScrollWheelDown> 12<C-E>
-set ttymouse=sgr
+" https://github.com/neovim/neovim/issues/2725
+if !has('nvim')
+    set ttymouse=sgr
+endif
 set encoding=utf-8
 let mapleader = "\<Space>"
 set nu
@@ -30,7 +33,6 @@ filetype plugin indent on
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-set textwidth=119
 set expandtab
 set autoindent
 set fileformat=unix
@@ -42,13 +44,9 @@ augroup myvimrc
 augroup END
 
 " remap this bullshit
-if !exists(":W")
-    command W w
-endif
-
-if !exists(":Q")
-    command Q q
-endif
+command! W w
+command! Q q
+command! Wq wq
 
 " toggle spell check
 set spell
@@ -64,5 +62,4 @@ elseif system("uname") == "Darwin"
   nmap <C-c> :.w !pbcopy<CR><CR>
   vnoremap <silent> <C-c> :<CR>:let @a=@" \| execute "normal! vgvy" \| let res=system("pbcopy", @") \| let @"=@a<CR>
 endif
-
 
