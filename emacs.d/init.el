@@ -13,6 +13,11 @@
 (global-display-line-numbers-mode t)
 (setq visible-bell t)
 
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+(setq recentf-max-saved-items 25)
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+
 (set-face-attribute 'default nil :font "Source Code Pro" :height 170)
 
 ;; Package sources
