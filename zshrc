@@ -59,25 +59,6 @@ bindkey '^[OB' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-# notes
-n() {
-    notes_path="$HOME/notes"
-    mkdir -p $notes_path
-
-    date=$(date +%Y%m%d)  # 20150628
-    pretty_date=$(date +"%a %b %d %Y")  # Sun Jun 28 2015
-    notes_file="$notes_path/$date.md"
-    template_file="$HOME/git/dots/daily_template.md"
-
-    if [[ ! -a ${notes_file} ]]; then
-        eval "cat <<EOF
-$(<$template_file)
-EOF" > $notes_file
-    fi
-
-    vim $notes_file
-}
-
 alias -g :q=exit
 
 # The next line updates PATH for the Google Cloud SDK.
