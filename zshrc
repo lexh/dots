@@ -83,3 +83,9 @@ export LANG=en_US.UTF-8
 alias gj="cd ~/git/java"
 
 alias cjoin="awk -v d=',' '{s=(NR==1? s: s d) \$0 } END {print s}'"
+
+# fh - repeat history
+# https://github.com/junegunn/fzf/wiki/examples#command-history
+fh() {
+  print -z $( fc -l 1 | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+}
