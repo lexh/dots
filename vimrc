@@ -41,6 +41,7 @@ set fileformat=unix
 augroup myvimrc
     au!
     au BufWritePost $MYVIMRC so $MYVIMRC
+    au BufWritePost ~/git/dots/vimrc so $MYVIMRC
 augroup END
 
 " remap this bullshit
