@@ -89,3 +89,14 @@ alias cjoin="awk -v d=',' '{s=(NR==1? s: s d) \$0 } END {print s}'"
 fh() {
   print -z $( fc -l 1 | fzf -e +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
 }
+
+# fd - cd to selected directory
+cdf() {
+  local dir
+  dir=$(fd ${1:-.} -t d | fzf +m) && cd "$dir" && pwd
+}
+
+cdg() {
+  local dir
+  dir=$(fd . ${GOPATH}/src/ --exact-depth 3 -t d | fzf +m) && cd "$dir" && pwd
+}
