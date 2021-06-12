@@ -93,10 +93,10 @@ fh() {
 # fd - cd to selected directory
 cdf() {
   local dir
-  dir=$(fd ${1:-.} -t d | fzf +m) && cd "$dir" && pwd
+  dir=$(fd ${1:-.} ${2:-.} -t d | fzf -e +m) && cd "$dir" && pwd
 }
 
 cdg() {
   local dir
-  dir=$(fd . ${GOPATH}/src/ --exact-depth 3 -t d | fzf +m) && cd "$dir" && pwd
+  dir=$(fd . ${GOPATH}/src/ --exact-depth 3 -t d | fzf -e +m) && cd "$dir" && pwd
 }
