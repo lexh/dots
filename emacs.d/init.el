@@ -18,7 +18,7 @@
 (setq recentf-max-saved-items 25)
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
-(set-face-attribute 'default nil :font "Source Code Pro" :height 170)
+(set-face-attribute 'default nil :font "Source Code Pro" :height 120)
 
 ;; Package sources
 (require 'package)

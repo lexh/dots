@@ -90,11 +90,18 @@ fh() {
   print -z $( fc -l 1 | fzf -e +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
 }
 
+# this gets aliased on macOS but not Linux, so conditionally set it up.
+if [ $(type "fd" > /dev/null) ]; then
+  alias fd=fdfind
+fi
+
+
 # fd - cd to selected directory
 cdf() {
   local dir
   dir=$(fd ${1:-.} ${2:-.} -t d | fzf -e +m) && cd "$dir" && pwd
 }
+
 
 cdg() {
   local dir
