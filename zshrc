@@ -91,7 +91,7 @@ fh() {
 }
 
 # this gets aliased on macOS but not Linux, so conditionally set it up.
-if [ $(type "fd" > /dev/null) ]; then
+if ! [ $(type "fd" > /dev/null) ]; then
   alias fd=fdfind
 fi
 
