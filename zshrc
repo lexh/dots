@@ -87,7 +87,14 @@ alias cjoin="awk -v d=',' '{s=(NR==1? s: s d) \$0 } END {print s}'"
 # fh - repeat history
 # https://github.com/junegunn/fzf/wiki/examples#command-history
 fh() {
-  print -z $( fc -l 1 | fzf -e +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+  # zsh-ism to string join an array
+  local query=${(j. .)argv}
+
+  if ! [ -z "${query}" ]; then
+    print -z $( fc -l 1 | fzf -e +s --tac --query "${query}" | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+  else
+    print -z $( fc -l 1 | fzf -e +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+  fi
 }
 
 # this gets aliased on macOS but not Linux, so conditionally set it up.
