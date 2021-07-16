@@ -1,9 +1,9 @@
-# zsh basic
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 plugins=(
   git
   kubectl
+  vi-mode
   zsh-autosuggestions
   history-substring-search
 )
@@ -12,6 +12,8 @@ source $ZSH/oh-my-zsh.sh
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
+
+VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 
 # history
 HISTFILE="$HOME/.zsh_history"
@@ -58,6 +60,8 @@ bindkey '^[OA' history-substring-search-up
 bindkey '^[OB' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
+
+bindkey -M vicmd v edit-command-line
 
 alias -g :q=exit
 
