@@ -102,13 +102,11 @@ if ! [ $(type "fd" > /dev/null) ]; then
   alias fd=fdfind
 fi
 
-
 # fd - cd to selected directory
 cdf() {
   local dir
   dir=$(fd ${1:-.} ${2:-.} -t d | fzf -e +m) && cd "$dir" && pwd
 }
-
 
 cdg() {
   local dir
