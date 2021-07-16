@@ -37,22 +37,30 @@ set expandtab
 set autoindent
 set fileformat=unix
 
-" auto reload $MYVIMRC
-augroup myvimrc
-    au!
-    au BufWritePost $MYVIMRC so $MYVIMRC
-    au BufWritePost ~/git/dots/vimrc so $MYVIMRC
-augroup END
+" edit vimrc
+nnoremap <Leader>ve :e $MYVIMRC<CR>
+
+" reload vimrc
+nnoremap <Leader>vr :source $MYVIMRC<CR>
 
 " remap this bullshit
 command! W w
 command! Q q
 command! Wq wq
+nnoremap Q q
+nnoremap q <Nop>
+nnoremap q: <Nop>
 
 " toggle spell check
 set spell
 set nospell
-nmap <C-f> :set nospell!<CR>
+nmap <C-F> :set nospell!<CR>
+
+" highlight color + toggle
+hi Search cterm=NONE ctermfg=black ctermbg=yellow
+let hlstate=0
+set hlsearch
+nnoremap <C-N> :if (hlstate == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=1-hlstate<cr>
 
 " system clipboard shortcuts
 if system("uname") == "Linux"
